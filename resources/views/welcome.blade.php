@@ -59,7 +59,7 @@
         </h1>
 
         <p class="text-lg md:text-xl text-slate-400 max-w-2xl mx-auto leading-relaxed mb-10">
-            I craft clean code, build modern web experiences, and solve complex problems with elegant solutions.
+            I can defeat you in untitled boxing game!
         </p>
 
         <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
