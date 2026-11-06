@@ -134,7 +134,17 @@ jobs:
           cd /home/axelv-laravel/htdocs/laravel.axelv.my.id
           git reset --hard HEAD
           git pull origin main
+          
+          # 1. Clear cached bootstrap files that reference missing packages
+          rm -f bootstrap/cache/*.php
+          
+          # 2. Fix file permissions for storage and cache directories
+          chmod -R 775 storage bootstrap/cache
+          
+          # 3. Install composer dependencies (restores vendor folder)
           composer install --no-dev --optimize-autoloader --no-interaction
+          
+          # 4. Run database migrations and rebuild caches
           php artisan migrate --force
           php artisan config:cache
           php artisan route:cache
