@@ -121,7 +121,7 @@ jobs:
         password: ${{ secrets.SSH_PASSWORD }}
         port: 22
         source: "vendor.tar.gz"
-        target: "/home/axelv-laravel/htdocs/laravel.axelv.my.id/public"
+        target: "/home/axelv-laravel/htdocs/laravel.axelv.my.id"
 
     - name: Deploy via SSH
       uses: appleboy/ssh-action@v1.2.5
@@ -131,7 +131,7 @@ jobs:
         password: ${{ secrets.SSH_PASSWORD }}
         port: 22
         script: |
-          cd /home/axelv-laravel/htdocs/laravel.axelv.my.id/public
+          cd /home/axelv-laravel/htdocs/laravel.axelv.my.id
           git pull origin main
           rm -rf vendor
           tar -xzf vendor.tar.gz
